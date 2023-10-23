@@ -473,74 +473,24 @@
                 <h4>Connect with Us</h4>
             </div>
 
-            <a href="#" class="social-icon si-facebook" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook">
+            <a href="http://facebook.com/ranggacahyaw" class="social-icon si-facebook" data-bs-toggle="tooltip" target="blank" data-bs-placement="top" title="Facebook">
                 <i class="icon-facebook"></i>
                 <i class="icon-facebook"></i>
             </a>
 
-            <a href="#" class="social-icon si-delicious" data-bs-toggle="tooltip" data-bs-placement="top" title="Delicious">
-                <i class="icon-delicious"></i>
-                <i class="icon-delicious"></i>
+            <a href="http://instagram.com/ranggacaw" class="social-icon si-instagram" data-bs-toggle="tooltip" target="blank" data-bs-placement="top" title="Instagram">
+                <i class="icon-instagram"></i>
+                <i class="icon-instagram"></i>
+            </a>
+            
+            <a href="https://www.tiktok.com/@ranggacaw" class="social-icon si-tiktok" data-bs-toggle="tooltip" target="blank" data-bs-placement="top" title="tiktok">
+                <i class="icon-tiktok"></i>
+                <i class="icon-tiktok"></i>
             </a>
 
-            <a href="#" class="social-icon si-paypal" data-bs-toggle="tooltip" data-bs-placement="top" title="PayPal">
-                <i class="icon-paypal"></i>
-                <i class="icon-paypal"></i>
-            </a>
-
-            <a href="#" class="social-icon si-flattr" data-bs-toggle="tooltip" data-bs-placement="top" title="Flattr">
-                <i class="icon-flattr"></i>
-                <i class="icon-flattr"></i>
-            </a>
-
-            <a href="#" class="social-icon si-android" data-bs-toggle="tooltip" data-bs-placement="top" title="Android">
-                <i class="icon-android"></i>
-                <i class="icon-android"></i>
-            </a>
-
-            <a href="#" class="social-icon si-smashmag" data-bs-toggle="tooltip" data-bs-placement="top" title="Smashing Magazine">
-                <i class="icon-smashmag"></i>
-                <i class="icon-smashmag"></i>
-            </a>
-
-            <a href="#" class="social-icon si-gplus" data-bs-toggle="tooltip" data-bs-placement="top" title="Google+">
-                <i class="icon-gplus"></i>
-                <i class="icon-gplus"></i>
-            </a>
-
-            <a href="#" class="social-icon si-wikipedia" data-bs-toggle="tooltip" data-bs-placement="top" title="Wikipedia">
-                <i class="icon-wikipedia"></i>
-                <i class="icon-wikipedia"></i>
-            </a>
-
-            <a href="#" class="social-icon si-stumbleupon" data-bs-toggle="tooltip" data-bs-placement="top" title="StumbleUpon">
-                <i class="icon-stumbleupon"></i>
-                <i class="icon-stumbleupon"></i>
-            </a>
-
-            <a href="#" class="social-icon si-foursquare" data-bs-toggle="tooltip" data-bs-placement="top" title="FourSquare">
-                <i class="icon-foursquare"></i>
-                <i class="icon-foursquare"></i>
-            </a>
-
-            <a href="#" class="social-icon si-call" data-bs-toggle="tooltip" data-bs-placement="top" title="Call">
-                <i class="icon-call"></i>
-                <i class="icon-call"></i>
-            </a>
-
-            <a href="#" class="social-icon si-ninetyninedesigns" data-bs-toggle="tooltip" data-bs-placement="top" title="Ninety Nine Design">
-                <i class="icon-ninetyninedesigns"></i>
-                <i class="icon-ninetyninedesigns"></i>
-            </a>
-
-            <a href="#" class="social-icon si-forrst" data-bs-toggle="tooltip" data-bs-placement="top" title="Forrst">
-                <i class="icon-forrst"></i>
-                <i class="icon-forrst"></i>
-            </a>
-
-            <a href="#" class="social-icon si-digg" data-bs-toggle="tooltip" data-bs-placement="top" title="Digg">
-                <i class="icon-digg"></i>
-                <i class="icon-digg"></i>
+            <a href="https://youtube.com/@Ranggacaw" class="social-icon si-youtube" data-bs-toggle="tooltip" target="blank" data-bs-placement="top" title="Youtube">
+                <i class="icon-youtube"></i>
+                <i class="icon-youtube"></i>
             </a>
         </div>
     </div>
