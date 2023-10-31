@@ -44,6 +44,7 @@
 		</section><!-- #content end -->
 
         @include('layouts.footer')
+		@include('sweetalert::alert')
 
     </div><!-- #wrapper end -->
 

@@ -189,25 +189,25 @@ window.scwEvents = window.scwEvents || {};
 				file = jsPath + settings.file;
 			}
 
-			if( pluginFnExec ) {
-				SEMICOLON.initialize.execPlugin( element, settings, true );
-			} else {
-				if( !disableAJAX ) {
-					$.ajax({
-						url: file,
-						dataType: "script",
-						cache: true,
-						crossDomain: true,
-						timeout: 5000,
-					}).done(function() {
-						SEMICOLON.initialize.execPlugin( element, settings, false );
-					}).fail(function() {
-						console.log( settings.error );
-					});
-				} else {
-					console.log( settings.error );
-				}
-			}
+			// if( pluginFnExec ) {
+			// 	SEMICOLON.initialize.execPlugin( element, settings, true );
+			// } else {
+			// 	if( !disableAJAX ) {
+			// 		$.ajax({
+			// 			url: file,
+			// 			dataType: "script",
+			// 			cache: true,
+			// 			crossDomain: true,
+			// 			timeout: 5000,
+			// 		}).done(function() {
+			// 			SEMICOLON.initialize.execPlugin( element, settings, false );
+			// 		}).fail(function() {
+			// 			console.log( settings.error );
+			// 		});
+			// 	} else {
+			// 		console.log( settings.error );
+			// 	}
+			// }
 		},
 
 		functions: function( settings ){

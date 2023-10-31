@@ -14,32 +14,53 @@
                 ============================================= -->
                 <div class="top-links on-click">
                     <ul class="top-links-container">
-                        <li class="top-links-item">
-                            <a href="#">Login</a>
-                            <div class="top-links-section">
-                                <form id="top-login" autocomplete="off">
-                                    <div class="form-group">
-                                        <label>Username</label>
-                                        <input type="email" class="form-control" placeholder="Email address">
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Password</label>
-                                        <input type="password" class="form-control" placeholder="Password" required="">
-                                    </div>
-                                    <div class="form-group form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="top-login-checkbox">
-                                        <label class="form-check-label" for="top-login-checkbox">Remember Me</label>
-                                    </div>
-                                    <button class="btn btn-danger w-100" type="submit">Sign in</button>
-                                </form>
-                            </div>
-                        </li>
                         @if (Route::has('login'))
                             <li class="top-links-item">
                                 @auth
-                                    <a href="{{ url('/home') }}">Home</a>
+                                    <a href="#">{{Auth::user()->name;}}</a>
+                                    <ul class="top-links-sub-menu">
+                                        <li class="top-links-item"><a href="#">Profile</a></li>
+                                        <li class="top-links-item"><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
+                                    </ul>
+                                    
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        {{ csrf_field() }}
+                                    </form>
                                 @else
-                                    <a href="{{ route('login') }}">Log in</a>
+                                <a href="#">Login</a>
+                                <div class="top-links-section">
+                                    <form method="POST" action="{{ route('login') }}">
+                                        @csrf
+                                        <div class="form-group">
+                                            <label>Username</label>
+                                            <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="johndoe@gmail.com">
+    
+                                            @error('email')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Password</label>
+                                            <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password" placeholder="Password">
+            
+                                            @error('password')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
+                                        </div>
+                                        <div class="form-group form-check">
+                                            <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+        
+                                            <label class="form-check-label" for="remember">
+                                                {{ __('Remember Me') }}
+                                            </label>
+                                        </div>
+                                        <button class="btn btn-primary w-100" type="submit">Sign in</button>
+                                    </form>
+                                </div>
                             </li>
 
                             <li class="top-links-item">
@@ -51,7 +72,6 @@
                         @endif
                     </ul>
                 </div><!-- .top-links end -->
-
             </div>
         </div>
 
@@ -163,105 +183,8 @@
                         <li class="menu-item">
                             <a class="menu-link" href="{{url('/') }}"><div>Home</div></a>
                         </li>
-                        <li class="menu-item"><a class="menu-link" href="#"><div>Men</div></a>
-                            {{-- <div class="mega-menu-content mega-menu-style-2">
-                                <div class="container">
-                                    <div class="row">
-                                        <ul class="sub-menu-container mega-menu-column col-lg-3">
-                                            <li class="menu-item mega-menu-title"><a class="menu-link" href="#"><div>Footwear</div></a>
-                                                <ul class="sub-menu-container">
-                                                    <li class="menu-item"><a class="menu-link" href="#"><div>Casual Shoes</div></a></li>
-                                                    <li class="menu-item"><a class="menu-link" href="#"><div>Formal Shoes</div></a></li>
-                                                    <li class="menu-item"><a class="menu-link" href="#"><div>Sports shoes</div></a></li>
-                                                    <li class="menu-item"><a class="menu-link" href="#"><div>Flip Flops</div></a></li>
-                                                    <li class="menu-item"><a class="menu-link" href="#"><div>Slippers</div></a></li>
-                                                    <li class="menu-item"><a class="menu-link" href="#"><div>Sports Sandals</div></a></li>
-                                                    <li class="menu-item"><a class="menu-link" href="#"><div>Party Shoes</div></a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-
-                                        <ul class="sub-menu-container mega-menu-column col-lg-3">
-                                            <li class="menu-item mega-menu-title"><a class="menu-link" href="#"><div>Clothing</div></a>
-                                                <ul class="sub-menu-container">
-                                                    <li class="menu-item"><a class="menu-link" href="#"><div>Casual Shirts</div></a></li>
-                                                    <li class="menu-item"><a class="menu-link" href="#"><div>T-Shirts</div></a></li>
-                                                    <li class="menu-item"><a class="menu-link" href="#"><div>Collared Tees</div></a></li>
-                                                    <li class="menu-item"><a class="menu-link" href="#"><div>Pants / Trousers</div></a></li>
-                                                    <li class="menu-item"><a class="menu-link" href="#"><div>Ethnic Wear</div></a></li>
-                                                    <li class="menu-item"><a class="menu-link" href="#"><div>Jeans</div></a></li>
-                                                    <li class="menu-item"><a class="menu-link" href="#"><div>Sweamwear</div></a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-
-                                        <ul class="sub-menu-container mega-menu-column col-lg-3">
-                                            <li class="menu-item mega-menu-title"><a class="menu-link" href="#"><div>Accessories</div></a>
-                                                <ul class="sub-menu-container">
-                                                    <li class="menu-item"><a class="menu-link" href="#"><div>Bags &amp; Backpacks</div></a></li>
-                                                    <li class="menu-item"><a class="menu-link" href="#"><div>Watches</div></a></li>
-                                                    <li class="menu-item"><a class="menu-link" href="#"><div>Sunglasses</div></a></li>
-                                                    <li class="menu-item"><a class="menu-link" href="#"><div>Wallets</div></a></li>
-                                                    <li class="menu-item"><a class="menu-link" href="#"><div>Caps &amp; Hats</div></a></li>
-                                                    <li class="menu-item"><a class="menu-link" href="#"><div>Jewellery</div></a></li>
-                                                    <li class="menu-item"><a class="menu-link" href="#"><div>Belts, Ties</div></a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-
-                                        <ul class="sub-menu-container mega-menu-column col-lg-3">
-                                            <li class="menu-item mega-menu-title"><a class="menu-link" href="#"><div>New Arrivals</div></a>
-                                                <ul class="sub-menu-container">
-                                                    <li class="menu-item"><a class="menu-link" href="#"><div>T-Shirts</div></a></li>
-                                                    <li class="menu-item"><a class="menu-link" href="#"><div>Formal Shoes</div></a></li>
-                                                    <li class="menu-item"><a class="menu-link" href="#"><div>Accessories</div></a></li>
-                                                    <li class="menu-item"><a class="menu-link" href="#"><div>Watches</div></a></li>
-                                                    <li class="menu-item"><a class="menu-link" href="#"><div>Perfumes</div></a></li>
-                                                    <li class="menu-item"><a class="menu-link" href="#"><div>Belts, Ties</div></a></li>
-                                                    <li class="menu-item"><a class="menu-link" href="#"><div>Formal Shirts</div></a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div> --}}
-                        </li>
-                        <li class="menu-item"><a class="menu-link" href="#"><div>Women</div></a>
-                            {{-- <div class="mega-menu-content mega-menu-style-2">
-                                <div class="container">
-                                    <div class="row">
-                                        <ul class="sub-menu-container mega-menu-column col-6">
-                                            <li class="menu-item mega-menu-title"><a class="menu-link" href="#"><div>Footwear</div></a>
-                                                <ul class="sub-menu-container">
-                                                    <li class="menu-item"><a class="menu-link" href="#"><div>Casual Shoes</div></a></li>
-                                                    <li class="menu-item"><a class="menu-link" href="#"><div>Formal Shoes</div></a></li>
-                                                    <li class="menu-item"><a class="menu-link" href="#"><div>Sports shoes</div></a></li>
-                                                    <li class="menu-item"><a class="menu-link" href="#"><div>Flip Flops</div></a></li>
-                                                    <li class="menu-item"><a class="menu-link" href="#"><div>Slippers</div></a></li>
-                                                    <li class="menu-item"><a class="menu-link" href="#"><div>Sports Sandals</div></a></li>
-                                                    <li class="menu-item"><a class="menu-link" href="#"><div>Party Shoes</div></a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                        <ul class="sub-menu-container mega-menu-column col-6">
-                                            <li class="menu-item mega-menu-title"><a class="menu-link" href="#"><div>Clothing</div></a>
-                                                <ul class="sub-menu-container">
-                                                    <li class="menu-item"><a class="menu-link" href="#"><div>Casual Shirts</div></a></li>
-                                                    <li class="menu-item"><a class="menu-link" href="#"><div>T-Shirts</div></a></li>
-                                                    <li class="menu-item"><a class="menu-link" href="#"><div>Collared Tees</div></a></li>
-                                                    <li class="menu-item"><a class="menu-link" href="#"><div>Pants / Trousers</div></a></li>
-                                                    <li class="menu-item"><a class="menu-link" href="#"><div>Ethnic Wear</div></a></li>
-                                                    <li class="menu-item"><a class="menu-link" href="#"><div>Jeans</div></a></li>
-                                                    <li class="menu-item"><a class="menu-link" href="#"><div>Sweamwear</div></a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div> --}}
-                        </li><!-- .mega-menu end -->
-                        {{-- <li class="menu-item"><a class="menu-link" href="#"><div>Accessories</div></a></li>
-                        <li class="menu-item"><a class="menu-link" href="#"><div>Sale</div></a></li> --}}
+                        <li class="menu-item"><a class="menu-link" href="#"><div>Men</div></a></li>
+                        <li class="menu-item"><a class="menu-link" href="#"><div>Women</div></a></li>
                         <li class="menu-item"><a class="menu-link" href="http://blog.test" target="blank"><div>Blog</div></a></li>
                         <li class="menu-item"><a class="menu-link" href="{{ url('contact' )}}"><div>Contact</div></a></li>
                     </ul>

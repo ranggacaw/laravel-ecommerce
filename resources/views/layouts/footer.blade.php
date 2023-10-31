@@ -109,20 +109,6 @@
 
                     <div class="row col-mb-50">
 
-                        <div class="col-md-5 col-lg-12">
-                            <div class="widget subscribe-widget clearfix">
-                                <h5><strong>Subscribe</strong> to Our Newsletter to get Important News, Amazing Offers &amp; Inside Scoops:</h5>
-                                <div class="widget-subscribe-form-result"></div>
-                                <form id="widget-subscribe-form" action="include/subscribe.php" method="post" class="mb-0">
-                                    <div class="input-group mx-auto">
-                                        <div class="input-group-text"><i class="icon-email2"></i></div>
-                                        <input type="email" id="widget-subscribe-form-email" name="widget-subscribe-form-email" class="form-control required email" placeholder="Enter your Email">
-                                        <button class="btn btn-success" type="submit">Subscribe</button>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-
                         <div class="col-md-3 col-lg-12">
                             <div class="widget clearfix" style="margin-bottom: -20px;">
 

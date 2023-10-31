@@ -33,3 +33,7 @@ Route::get('/cart', [App\Http\Controllers\CartController::class, 'index'])->name
 
 // checkoout
 Route::get('/checkout', [App\Http\Controllers\CheckoutController::class, 'index'])->name('checkout');
+
+// complaint
+Route::get('/complaint', [App\Http\Controllers\ComplaintController::class, 'index'])->name('complaint');
+Route::post('/complaint-store', [App\Http\Controllers\ComplaintController::class, 'store'])->name('complaint.store');
